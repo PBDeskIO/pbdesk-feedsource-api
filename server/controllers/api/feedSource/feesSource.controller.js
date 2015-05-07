@@ -1,10 +1,12 @@
 'use strict';
 var feedSourceController = function(){
+
+    var dal = require('./../../../dal');
+
+
     var get = function(req, res, next){
-        res.json({
-            hello: 'World',
-            test: 'success'
-        });
+        var result = dal.feedSource.getAll();
+        res.json(result);
     };
 
     return {

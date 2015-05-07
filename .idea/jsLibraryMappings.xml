@@ -9,6 +9,8 @@
     <file url="file://$PROJECT_DIR$/server/controllers/home/home.controller.js" libraries="{Node.js Globals}" />
     <file url="file://$PROJECT_DIR$/server/controllers/home/home.route.js" libraries="{Node.js Globals}" />
     <file url="file://$PROJECT_DIR$/server/controllers/index.js" libraries="{Node.js Globals}" />
+    <file url="file://$PROJECT_DIR$/server/dal/feedSource/feedSourceCRUD.js" libraries="{Node.js Globals}" />
+    <file url="file://$PROJECT_DIR$/server/dal/index.js" libraries="{Node.js Globals}" />
     <file url="file://$PROJECT_DIR$/server/index.js" libraries="{Node.js Globals, body-parser-DefinitelyTyped}" />
   </component>
 </project>
