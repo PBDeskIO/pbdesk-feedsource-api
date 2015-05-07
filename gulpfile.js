@@ -8,7 +8,6 @@
 
     gulp.task('help', gUtil.GP.taskListing);
     gulp.task('default', ['help']);
-    
     gulp.task('hello-gulp', function() {
         console.log('Hello Gulp - from my test Gulp Task');
     });

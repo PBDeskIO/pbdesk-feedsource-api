@@ -5,12 +5,10 @@ var feedSourceController = function(){
             hello: 'World',
             test: 'success'
         });
-    }
+    };
 
     return {
         get: get
-    }
-}
+    };
+};
 module.exports = feedSourceController;
-
-

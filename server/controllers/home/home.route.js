@@ -8,6 +8,3 @@ homeRouter
     .get(homeController.get);
 
 module.exports = homeRouter;
-
-
-

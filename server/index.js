@@ -15,14 +15,10 @@ var routes = require('./controllers');
 
 var app = express();
 
-
-// uncomment after placing your favicon in /public
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-
 
 routes.init(app);
 
