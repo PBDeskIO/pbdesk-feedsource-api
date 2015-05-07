@@ -1,8 +1,17 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
+//Loading Configs
+var path = require('path');
+var env = process.env.NODE_ENV = (process.env.NODE_ENV  || 'development');
+
+var configs = require('pbdesk-configurator')(process.env.NODE_ENV, path.join(__dirname, './configs'));
+if(configs instanceof Error){
+    console.log("Error loading configs in pbdesk-configurator module.")
+    console.log(configs.message);
+    process.exit(1);
+}
+global.AppConfigs = configs;
+
 var env = process.env.NODE_ENV = (process.env.NODE_ENV  || 'development');
 
 var app = require('./server/index');
