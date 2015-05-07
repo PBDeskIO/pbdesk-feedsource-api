@@ -5,12 +5,15 @@
 
     gUtil.gulp.task('dev-run', function () {
         gUtil.GP.nodemon({
-            script: 'bin/www',
+            script: 'server.js',
             ext: 'js',
             ignore: [
                 'node_modules'
             ],
-            env: {'NODE_ENV': 'development'}
+            env: {
+                'NODE_ENV': 'development',
+                'PORT': 3003
+            }
         });
     })
     .on('restart', function () {
