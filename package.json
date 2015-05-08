@@ -23,6 +23,7 @@
     "express": "~4.12.3",
     "morgan": "~1.5.2",
     "mongoose": "^4.0.2",
+    "serve-favicon": "~2.1.3",
     "pbdesk-configurator": "git://github.com/PBDeskIO/pbdesk-configurator#0.0.2",
     "pbdesk-schema-feedsource": "git://github.com/PBDeskIO/pbdesk-schema-feedsource#0.0.3"
   },
