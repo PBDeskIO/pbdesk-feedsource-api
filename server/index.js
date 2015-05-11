@@ -1,11 +1,6 @@
-/*
-var feedSourceSchema = require('pbdesk-schema-feedsource');
-console.log(feedSourceSchema.feedFormats);
-console.log(feedSourceSchema.feedCategories);
-console.log(feedSourceSchema.model);*/
-
 var express = require('express');
 var path = require('path');
+var nodeProcessExit = require('exit');
 
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -18,6 +13,7 @@ var mongoose = require('mongoose');
 var db = mongoose.connect(AppConfigs.dbConStr, function(err) {
     if(err) {
         console.log('Connection Error: Mongoose cannot connect to MongoDB ', err);
+        nodeProcessExit(5);
     } else {
         console.log('Connection Successful: Mongoose successfully connected to MongoDB ');
     }

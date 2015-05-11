@@ -2,42 +2,31 @@
 
 //Loading Configs
 var path = require('path');
+var nodeProcessExit = require('exit');
 var env = process.env.NODE_ENV = (process.env.NODE_ENV  || 'development');
 
 var configs = require('pbdesk-configurator')(process.env.NODE_ENV, path.join(__dirname, './configs'));
 if(configs instanceof Error){
     console.log("Error loading configs in pbdesk-configurator module.")
     console.log(configs.message);
-    process.exit(1);
+    nodeProcessExit(5);
+    //process.exit(1);
 }
 global.AppConfigs = configs;
 
 var env = process.env.NODE_ENV = (process.env.NODE_ENV  || 'development');
+var port = normalizePort(process.env.PORT || '3002');
 
 var app = require('./server/index');
 var debug = require('debug')('server');
 var http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
-
-var port = normalizePort(process.env.PORT || '3002');
 app.set('port', port);
-
-/**
- * Create HTTP server.
- */
-
 var server = http.createServer(app);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+console.log("...NodeJS Express Http WebServer now runnong on port " + port)
 
 /**
  * Normalize a port into a number, string, or false.
