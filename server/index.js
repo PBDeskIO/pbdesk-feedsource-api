@@ -13,6 +13,16 @@ var bodyParser = require('body-parser');
 
 var routes = require('./controllers');
 
+var mongoose = require('mongoose');
+
+var db = mongoose.connect(AppConfigs.dbConStr, function(err) {
+    if(err) {
+        console.log('Connection Error: Mongoose cannot connect to MongoDB ', err);
+    } else {
+        console.log('Connection Successful: Mongoose successfully connected to MongoDB ');
+    }
+});
+
 var app = express();
 
 app.use(logger('dev'));
@@ -36,7 +46,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
+        res.json({
             message: err.message,
             error: err
         });
@@ -47,7 +57,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.json({
         message: err.message,
         error: {}
     });

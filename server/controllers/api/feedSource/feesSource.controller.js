@@ -3,14 +3,34 @@ var feedSourceController = function(){
 
     var dal = require('./../../../dal');
 
-
     var get = function(req, res, next){
-        var result = dal.feedSource.getAll();
-        res.json(result);
+        dal.feedSource.getAll(function(err, data){
+            if(err){
+                console.log(err);
+                res.status(500).json(err);
+            }
+            else{
+                res.json(data);
+            }
+        });
+
+    };
+
+    var post = function(req, res, next){
+        dal.feedSource.create(req.body, function(err, data){
+            if(err) {
+                console.log(err);
+                res.status(500).json(err);
+            }
+            else {
+                res.status(201).json(data);
+            }
+        });
     };
 
     return {
-        get: get
+        get: get,
+        post: post
     };
 };
 module.exports = feedSourceController;

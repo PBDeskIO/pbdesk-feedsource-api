@@ -6,6 +6,7 @@ var feedSourceController = require('./feesSource.controller')();
 
 feedSourceApiRouter
     .route('/feedSource')
-    .get(feedSourceController.get);
+    .get(feedSourceController.get)
+    .post(feedSourceController.post);
 
 module.exports = feedSourceApiRouter;

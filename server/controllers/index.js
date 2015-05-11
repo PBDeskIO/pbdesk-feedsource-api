@@ -5,8 +5,8 @@
     var feedSourceApiRoute = require('./api/feedSource/feedSource.route');
 
     routes.init = function(app){
+        app.use('/', homeRoutes);
         app.use('/api', [feedSourceApiRoute]);
-        app.use('*', homeRoutes);
     };
 
 })(module.exports);

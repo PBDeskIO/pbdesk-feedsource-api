@@ -1,19 +1,39 @@
-var mongoose = require("mongoose");
-var feedSourceSchema = require('pbdesk-schema-feedsource');
-var model = feedSourceSchema.model;
+var mongoose = require('mongoose');
+var feedSourceSchema = require('pbdesk-schema-feedsource')(mongoose);
+var model = feedSourceSchema.feedSourceModel;
 
 module.exports = {
-    getAll: _getAll
+    getAll: _getAll,
+    create: _create
+};
+
+function _getAll(cb) {
+    try {
+        //cb(null, {title: 'test1'});
+        model.find(function (err, data) {
+            if (err) {
+                cb(err, null);
+            }
+            else {
+                cb(null, data);
+            }
+        });
+    }
+    catch (ex){
+        console.log(ex);
+    }
 }
 
-function _getAll() {
-    model.find(function(err, sources){
+function _create(item, cb){
+    var itemToCreate = new model(item);
+    itemToCreate.save(function(err, newItem){
         if(err){
-            console.log(err);
-            return null;
+            cb(err, null);
+            //res.state(500).json(err);
         }
         else{
-            return sources;
+            cb(null, newItem);
+            //res.json(newItem);
         }
     });
 }
