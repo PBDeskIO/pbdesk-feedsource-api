@@ -1,16 +1,26 @@
-'use strict';
+(function () {
+    "use strict";
 
-var express = require('express');
-var feedSourceApiRouter = express.Router();
-var feedSourceController = require('./feesSource.controller')();
+    module.exports = function(mongoose){
 
-feedSourceApiRouter
-    .route('/feedSource')
-    .get(feedSourceController.get)
-    .post(feedSourceController.post);
+        var express = require("express");
+        var feedSourceApiRouter = express.Router();
+        var feedSourceController = require("./feesSource.controller")(mongoose);
 
-feedSourceApiRouter
-    .route('/feedSource/:itemId')
-    .get(feedSourceController.getById);
+        feedSourceApiRouter
+            .route("/feedSource")
+            .get(feedSourceController.get)
+            .post(feedSourceController.post);
 
-module.exports = feedSourceApiRouter;
+        feedSourceApiRouter
+            .route("/feedSource/:itemId")
+            .get(feedSourceController.getById);
+
+        return feedSourceApiRouter;
+    }
+
+}());
+
+
+
+

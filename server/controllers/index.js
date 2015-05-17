@@ -1,12 +1,13 @@
-;(function (routes) {
-    'use strict';
+(function (routes) {
+    "use strict";
 
-    var homeRoutes = require('./home/home.route');
-    var feedSourceApiRoute = require('./api/feedSource/feedSource.route');
+    routes.init = function(app, mongoose){
 
-    routes.init = function(app){
-        app.use('/', homeRoutes);
-        app.use('/api', [feedSourceApiRoute]);
+        var homeRoutes = require("./home/home.route");
+        var feedSourceApiRoute = require("./api/feedSource/feedSource.route")(mongoose);
+
+        app.use("/", homeRoutes);
+        app.use("/api", [feedSourceApiRoute]);
     };
 
 })(module.exports);

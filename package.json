@@ -25,7 +25,7 @@
     "mongoose": "^4.0.2",
     "morgan": "~1.5.2",
     "pbdesk-configurator": "git://github.com/PBDeskIO/pbdesk-configurator#0.0.2",
-    "pbdesk-schema-feedsource": "git://github.com/PBDeskIO/pbdesk-schema-feedsource#0.0.4",
+    "pbdesk-feedsource-schema": "git://github.com/PBDeskIO/pbdesk-feedsource-schema#0.0.5",
     "serve-favicon": "~2.2.0"
   },
   "devDependencies": {

@@ -10,7 +10,6 @@ if(configs instanceof Error){
     console.log("Error loading configs in pbdesk-configurator module.")
     console.log(configs.message);
     nodeProcessExit(5);
-    //process.exit(1);
 }
 global.AppConfigs = configs;
 
