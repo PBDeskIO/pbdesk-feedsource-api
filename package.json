@@ -1,5 +1,5 @@
 {
-  "name": "pbdesk-api-feedsource",
+  "name": "pbdesk-feedsource-api",
   "version": "0.0.0",
   "description": "Feed Source APIs",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PBDeskIO/pbdesk-api-feedsource.git"
+    "url": "git+https://github.com/PBDeskIO/pbdesk-feedsource-api.git"
   },
   "author": "Pinal Bhatt <self@pbdesk.io>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PBDeskIO/pbdesk-api-feedsource/issues"
+    "url": "https://github.com/PBDeskIO/pbdesk-feedsource-api/issues"
   },
-  "homepage": "https://github.com/PBDeskIO/pbdesk-api-feedsource#readme",
+  "homepage": "https://github.com/PBDeskIO/pbdesk-feedsource-api#readme",
   "dependencies": {
     "body-parser": "~1.12.3",
     "cookie-parser": "~1.3.4",
@@ -26,6 +26,7 @@
     "morgan": "~1.5.2",
     "pbdesk-configurator": "git://github.com/PBDeskIO/pbdesk-configurator#0.0.2",
     "pbdesk-feedsource-schema": "git://github.com/PBDeskIO/pbdesk-feedsource-schema#0.0.5",
+    "pbdesk-feedsource-dal": "git://github.com/PBDeskIO/pbdesk-feedsource-dal#0.0.1",
     "serve-favicon": "~2.2.0"
   },
   "devDependencies": {
@@ -43,6 +44,8 @@
     "gulp-util": "^3.0.4",
     "jshint-stylish": "^1.0.2",
     "require-dir": "^0.3.0",
-    "yargs": "^3.8.0"
+    "yargs": "^3.8.0",
+    "pbdesk-gulp-codereview": "git://github.com/PBDeskIO/pbdesk-gulp-codereview#0.0.1",
+    "pbdesk-gulp-utils": "git://github.com/PBDeskIO/pbdesk-gulp-utils#0.0.1"
   }
 }

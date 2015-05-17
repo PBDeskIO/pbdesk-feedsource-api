@@ -1,14 +1,17 @@
-'use strict';
+(function () {
+    "use strict";
 
-var homeController = function(){
+    var homeController = function(){
 
-    var get = function(req, res, next){
-        res.redirect('http://pbdesk.io');
+        var get = function(req, res, next){
+            res.redirect("http://pbdesk.io");
+        };
+
+        return {
+            get: get
+        };
     };
 
-    return {
-        get: get
-    };
-};
+    module.exports = homeController;
 
-module.exports = homeController;
+}());

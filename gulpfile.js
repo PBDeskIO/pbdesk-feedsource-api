@@ -1,14 +1,17 @@
-;(function () {
-    'use strict';
-    var gulp = require('gulp');
-    var gUtil = require('./gulp/gulp.utils.js')();
+(function () {
+    "use strict";
+    var gulp = require("gulp");
+    var gUtils = require("pbdesk-gulp-utils")(gulp);
+    var gConfigs = require("./gulp/gulp.config");
 
-    var requireDir;
-    requireDir = require('require-dir')('./gulp/tasks', {recurse: true});
+    require("require-dir")("./gulp/tasks", {recurse: true});
 
-    gulp.task('help', gUtil.GP.taskListing);
-    gulp.task('default', ['help']);
-    gulp.task('hello-gulp', function() {
-        console.log('Hello Gulp - from my test Gulp Task');
+    require("pbdesk-gulp-codereview")(gulp, gConfigs.serverJS);
+
+    gulp.task("help", gUtils.GP.taskListing);
+    gulp.task("default", ["help"]);
+
+    gulp.task("hello-gulp", function() {
+        console.log("Hello Gulp - from my test Gulp Task");
     });
 }());

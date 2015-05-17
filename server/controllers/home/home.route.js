@@ -1,10 +1,14 @@
-'use strict';
-var express = require('express');
-var homeRouter = express.Router();
-var homeController = require('./home.controller')();
+(function () {
+    "use strict";
 
-homeRouter
-    .route('/')
-    .get(homeController.get);
+    var express = require("express");
+    var homeRouter = express.Router();
+    var homeController = require("./home.controller")();
 
-module.exports = homeRouter;
+    homeRouter
+        .route("/")
+        .get(homeController.get);
+
+    module.exports = homeRouter;
+
+}());

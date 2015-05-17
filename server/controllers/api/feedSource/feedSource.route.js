@@ -14,10 +14,11 @@
 
         feedSourceApiRouter
             .route("/feedSource/:itemId")
-            .get(feedSourceController.getById);
+            .get(feedSourceController.getById)
+            .put(feedSourceController.updateItem);
 
         return feedSourceApiRouter;
-    }
+    };
 
 }());
 
