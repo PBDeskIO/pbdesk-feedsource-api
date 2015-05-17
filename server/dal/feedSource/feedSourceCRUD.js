@@ -1,9 +1,12 @@
+'use strict';
+
 var mongoose = require('mongoose');
 var feedSourceSchema = require('pbdesk-schema-feedsource')(mongoose);
 var model = feedSourceSchema.feedSourceModel;
 
 module.exports = {
     getAll: _getAll,
+    getById: _getById,
     create: _create
 };
 
@@ -21,6 +24,23 @@ function _getAll(cb) {
     }
     catch (ex){
         console.log(ex);
+    }
+}
+
+function _getById(itemId, cb){
+    try{
+        model.findById(itemId, function (err, data) {
+            if(err){
+                cb(err, null);
+            }
+            else{
+                cb(null, data);
+            }
+        });
+    }
+    catch(ex){
+        var err = new Error("Error in feedSourceCRUD::_getById - " + ex.message, ex );
+        cb(err, null);
     }
 }
 

@@ -28,9 +28,21 @@ var feedSourceController = function(){
         });
     };
 
+    var getById = function(req, res, next){
+        dal.feedSource.getById(req.params.itemId, function(err, data){
+           if(err){
+               res.status(500).json(err);
+           }
+            else{
+               res.status(200).json(data);
+           }
+        });
+    }
+
     return {
         get: get,
-        post: post
+        post: post,
+        getById: getById
     };
 };
 module.exports = feedSourceController;

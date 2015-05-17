@@ -9,4 +9,8 @@ feedSourceApiRouter
     .get(feedSourceController.get)
     .post(feedSourceController.post);
 
+feedSourceApiRouter
+    .route('/feedSource/:itemId')
+    .get(feedSourceController.getById);
+
 module.exports = feedSourceApiRouter;
