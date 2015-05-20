@@ -2,6 +2,7 @@
 
 //Loading Configs
 var path = require('path');
+var util = require('util');
 var nodeProcessExit = require('exit');
 var env = process.env.NODE_ENV = (process.env.NODE_ENV  || 'development');
 
@@ -13,7 +14,11 @@ if(configs instanceof Error){
 }
 global.AppConfigs = configs;
 
-var env = process.env.NODE_ENV = (process.env.NODE_ENV  || 'development');
+if(env === 'production'){
+    global.AppConfigs.dbConStr = util.format(global.AppConfigs.dbConStr, process.env.constr);
+}
+
+
 var port = normalizePort(process.env.PORT || '3002');
 
 var app = require('./server/index');
