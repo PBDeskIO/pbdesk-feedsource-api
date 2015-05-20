@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{pbdesk-api-feedsource node_modules}" />
+    <file url="file://$PROJECT_DIR$" libraries="{pbdesk-api-feedsource node_modules, pbdesk-feedsource-api node_modules}" />
     <file url="file://$PROJECT_DIR$/gulp/gulp.config.js" libraries="{Node.js Globals}" />
     <file url="file://$PROJECT_DIR$/gulpfile.js" libraries="{Node.js Globals}" />
     <file url="file://$PROJECT_DIR$/server.js" libraries="{Node.js Globals}" />
-    <file url="file://$PROJECT_DIR$/server/controllers/api/feedSource/feedSource.route.js" libraries="{Node.js Globals}" />
+    <file url="file://$PROJECT_DIR$/server/controllers/api/feedSource/feedSource.route.js" libraries="{Node.js Globals, express-DefinitelyTyped}" />
     <file url="file://$PROJECT_DIR$/server/controllers/api/feedSource/feesSource.controller.js" libraries="{Node.js Globals}" />
     <file url="file://$PROJECT_DIR$/server/controllers/home/home.controller.js" libraries="{Node.js Globals}" />
     <file url="file://$PROJECT_DIR$/server/controllers/home/home.route.js" libraries="{Node.js Globals}" />

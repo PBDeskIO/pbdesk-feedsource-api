@@ -15,7 +15,8 @@
         feedSourceApiRouter
             .route("/feedSource/:itemId")
             .get(feedSourceController.getById)
-            .put(feedSourceController.updateItem);
+            .put(feedSourceController.updateItem)
+            .delete(feedSourceController.deleteItem);
 
         return feedSourceApiRouter;
     };

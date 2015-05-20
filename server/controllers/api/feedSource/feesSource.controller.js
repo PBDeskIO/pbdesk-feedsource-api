@@ -58,11 +58,24 @@
             }
         }
 
+        var deleteItem = function(req, res,next){
+            var itemId = req.params.itemId;
+            feedSourceDAL.deleteItem(itemId, function(err,data){
+                if(err){
+                    res.status(500).json(err);
+                }
+                else{
+                    res.status(200).json(data);
+                }
+            });
+        }
+
         return {
             get: get,
             post: post,
             getById: getById,
-            updateItem: updateItem
+            updateItem: updateItem,
+            deleteItem: deleteItem
         };
     };
 
